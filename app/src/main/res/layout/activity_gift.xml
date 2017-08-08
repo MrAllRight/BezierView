@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/dark"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<com.example.liuyong.bezierview.GiftView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+</com.example.liuyong.bezierview.GiftView>
+</RelativeLayout>
