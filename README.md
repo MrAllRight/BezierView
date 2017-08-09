@@ -5,4 +5,4 @@
 
 2.将LAUNCHER改为WaveActivity,可看到水波纹效果
 
-3.将LAUNCHER改为BubbleViewActivity,可看到水波纹效果，详情参考正在进行中
+3.将LAUNCHER改为BubbleViewActivity,可看到qq气泡拖拽效果，详情参考正在进行中
