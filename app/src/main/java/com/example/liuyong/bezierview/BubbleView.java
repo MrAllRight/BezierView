@@ -17,15 +17,15 @@ import android.view.View;
  */
 
 public class BubbleView extends View {
-    private int mFixCircleRadius = 20;
-    private int mDragCircleRadius = 20;
-    private PointF mFixCirclePoint;
-    private PointF mDragCirclePoint;
-    private Paint paint;
-    private float distance;
-    private boolean isDrag = false;
-    private boolean isFixCircleShow = true;
-    private boolean isUp = false;
+    private int mFixCircleRadius = 20;//固定圆的半径，其半径会随着拉伸变小，我们设定最小是6，小于6的时候固定圆消失
+    private int mDragCircleRadius = 20;//拖拽时显示的园
+    private PointF mFixCirclePoint;//固定圆圆心，本文只是演示，具体使用时要自己计算view的大小，再设置合适的圆心和半径
+    private PointF mDragCirclePoint;//拖拽圆的圆心，随着拖拽不断变化
+    private Paint paint;//画笔
+    private float distance;//两个圆心的距离
+    private boolean isDrag = false;//判断手指按下时是否落在固定圆的区域
+    private boolean isFixCircleShow = true;//固定圆是否显示
+    private boolean isUp = false;//手指是否弹起，弹起时如果固定圆显示这时候要回弹回来，如果固定圆消失了，此时应该执行拖拽圆爆炸消失效果，本文演示只做消失效果
 
     public BubbleView(Context context) {
         this(context, null);
@@ -39,7 +39,7 @@ public class BubbleView extends View {
         super(context, attrs, defStyleAttr);
         init();
     }
-
+    //初始化画笔，圆心
     private void init() {
         mFixCirclePoint = new PointF(300, 300);
         mDragCirclePoint = new PointF(300, 300);
@@ -55,16 +55,17 @@ public class BubbleView extends View {
         isUp = false;
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                isDrag(downX, downY);
+                isDrag(downX, downY);//判断是否在固定圆区域，不在不显示拖拽效果
                 break;
             case MotionEvent.ACTION_MOVE:
                 if (!isDrag) return true;
-                if (event.getX() - mFixCirclePoint.x > mFixCircleRadius || event.getY() - mFixCirclePoint.y > mFixCircleRadius) {
-                    mDragCirclePoint.x = event.getX();
+                //判断是否出现拉伸效果
+                if (Math.abs(event.getX() - mFixCirclePoint.x )> mFixCircleRadius || Math.abs(event.getY() - mFixCirclePoint.y) > mFixCircleRadius) {
+                    mDragCirclePoint.x = event.getX();//不断改变拖拽圆的圆心
                     mDragCirclePoint.y = event.getY();
                     float dx = mFixCirclePoint.x - mDragCirclePoint.x;
                     float dy = mFixCirclePoint.y - mDragCirclePoint.y;
-                    distance = (float) Math.hypot(Math.abs(dx), Math.abs(dy));
+                    distance = (float) Math.hypot(Math.abs(dx), Math.abs(dy));//计算拖拽的距离
                     postInvalidate();
                 }
                 break;
@@ -92,25 +93,29 @@ public class BubbleView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (!isUp) {
+            //手指没有弹起时
             mFixCircleRadius = (int) (20 - distance / 14);
+            //初始化时只画固定圆
             if (!isDrag)
                 canvas.drawCircle(mFixCirclePoint.x, mFixCirclePoint.y, mFixCircleRadius, paint);
             else {
+                //拖拽时不断减小固定圆半径，如果小于6时，固定圆消失
                 if (mFixCircleRadius <= 6) {
                     isFixCircleShow = false;
                 }
                 if (mFixCircleRadius > 6 && isFixCircleShow) {
                     canvas.drawCircle(mFixCirclePoint.x, mFixCirclePoint.y, mFixCircleRadius, paint);
-                    drawBezer(canvas);
+                    drawBezer(canvas);//绘制拖拽的效果
                 }
                 canvas.drawCircle(mDragCirclePoint.x, mDragCirclePoint.y, mDragCircleRadius, paint);
             }
         } else {
+            //手指弹起时，如果固定圆没有消失，显示回弹效果
             if (isFixCircleShow)
                 canvas.drawCircle(mFixCirclePoint.x, mFixCirclePoint.y, mFixCircleRadius, paint);
         }
     }
-
+   //绘制拉伸的效果
     private void drawBezer(Canvas canvas) {
         Path path = new Path();
         //计算4个控制点
