@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:layout_marginBottom="10dp"
+    android:background="@mipmap/bankcard_bg">
+
+    <TextView
+        android:id="@+id/text_cardnum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_bank_name"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="40dp"
+        android:text="卡号"
+        android:textColor="@color/white"
+        android:textSize="12sp" />
+
+    <com.example.liuyong.bezierview.addbankcard.StarView
+        android:id="@+id/starview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/text_cardnum"
+        android:layout_marginLeft="20dp"
+        android:orientation="horizontal">
+
+    </com.example.liuyong.bezierview.addbankcard.StarView>
+
+    <RelativeLayout
+        android:id="@+id/rl_bank_name"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center_vertical"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:id="@+id/bankcard_name"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:gravity="center_vertical"
+            android:text="* * 银行"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

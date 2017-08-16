@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">BezierView</string>
+    <string name="add_card">添加银行卡</string>
+    <string name="reserved_phonenumber">预留手机号</string>
+    <string name="verification_code">验证码</string>
+    <string name="input_bankcard_code">请输入银行卡号</string>
 </resources>
