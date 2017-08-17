@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    >
+<RelativeLayout
+    android:id="@+id/rl_addbank_code"
+    android:padding="5dp"
+    android:background="@color/colorBule3"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:visibility="invisible"
+        android:id="@+id/addbank_code_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/icon_xiaoxi" />
+
+    <TextView
+        android:visibility="invisible"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        android:text="新的短消息"
+        android:id="@+id/addbank_code_tv1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/addbank_code_image" />
+
+    <TextView
+        android:visibility="invisible"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        android:layout_marginTop="3dp"
+        android:layout_marginLeft="5dp"
+        android:layout_below="@+id/addbank_code_tv1"
+        android:layout_toRightOf="@+id/addbank_code_image"
+        android:text="您收到的验证码xxxxxx"
+        android:id="@+id/addbank_code_tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</RelativeLayout>
+</LinearLayout>
