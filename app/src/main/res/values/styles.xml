@@ -6,6 +6,8 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowNoTitle">true</item>
+
     </style>
 
     <style name="dm_alert_dialog" parent="@android:style/Theme.Dialog">
@@ -16,10 +18,5 @@
         <item name="android:scrollHorizontally">true</item>
     </style>
 
-    <declare-styleable name="BubbleView">
-        <attr name="circleRadius" format="integer" />
-        <attr name="circleColor" format="color" />
-        <attr name="textColor" format="color" />
-        <attr name="textSize" format="dimension" />
-    </declare-styleable>
+
 </resources>

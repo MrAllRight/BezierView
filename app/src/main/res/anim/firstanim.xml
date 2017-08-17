@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fillAfter="true"
+    android:interpolator="@android:anim/accelerate_interpolator"
+    android:shareInterpolator="true">
+    //向上的动画
+    <translate
+        android:duration="100"
+        android:fromYDelta="0%p"
+        android:toYDelta="-5%p" />
+    //向下的动画在要100ms后执行
+    <translate
+        android:startOffset="100"
+        android:duration="500"
+        android:fromYDelta="0%p"
+        android:toYDelta="105%p"/>
+</set>

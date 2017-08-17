@@ -11,4 +11,5 @@
     <color name="colorGray1">#f9f9f9</color>
     <color name="colorGrayHint1">#d0d0d7</color>
     <color name="colorLine">#eeeeee</color>
+    <color name="phoneTextBlue">#128ce1</color>
 </resources>

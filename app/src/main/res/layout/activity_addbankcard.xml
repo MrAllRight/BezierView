@@ -1,12 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:password="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorGray1"
     android:orientation="vertical">
+    <RelativeLayout
+        android:id="@+id/title"
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:gravity="center_vertical"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:text="添加银行卡"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+        <TextView
+            android:layout_marginRight="15dp"
+            android:id="@+id/next"
+           android:gravity="center_vertical"
+            android:layout_alignParentRight="true"
+            android:text="下一步"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
 
     <LinearLayout
+        android:layout_below="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -129,13 +154,20 @@
                 </RelativeLayout>
             </LinearLayout>
 
+            <View
+                android:layout_alignParentBottom="true"
+                android:background="@color/colorLine"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp" />
+
             <RelativeLayout
                 android:id="@+id/addbank_rl_inputnum"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:gravity="center_horizontal">
+                android:layout_alignParentStart="true">
                 <com.example.liuyong.bezierview.addbankcard.BandCardEditText
                     android:textCursorDrawable="@drawable/color_cursor"
                     android:id="@+id/addbank_et_input"
@@ -152,13 +184,9 @@
                     android:textColor="@color/colorBule2"
                     android:textColorHint="@color/colorGrayHint1"
                     android:textSize="14sp"
+                    app:editTextType="bankCard"
                  />
             </RelativeLayout>
-            <View
-                android:layout_alignParentBottom="true"
-                android:background="@color/colorLine"
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp" />
         </RelativeLayout>
 
     </LinearLayout>

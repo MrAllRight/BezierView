@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="bandCardEditText">
+        <attr name="editTextType" format="integer">
+            <enum name="bankCard" value="0"/>
+            <enum name="phoneNum"   value="1"/>
+        </attr>
+    </declare-styleable>
+</resources>
