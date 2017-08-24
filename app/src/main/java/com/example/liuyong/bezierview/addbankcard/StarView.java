@@ -79,7 +79,7 @@ public class StarView extends LinearLayout {
         time.schedule(task, 0, 50);//添加定时器，间隔50毫秒对textview执行坠落动画，
     }
 
-    public void setText(String s) {
+    public void setText(CharSequence s) {
         ((TextView) getChildAt(0)).setText(s);
     }//用第一个textview显示卡号
 }

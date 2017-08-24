@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -69,13 +68,12 @@ public class AddBankCardActivity extends AppCompatActivity implements View.OnCli
         etInput.setListener(new BandCardEditText.BandCardEditTextListen() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
+                starView.setText(s);//将EditText的内容显示到第一个星星（TextView）上
             }
 
             @Override
             public void afterTextChanged(Editable editable) {
                 starView.startAnim();//开始输入卡号的时候，执行星星坠落动画
-                starView.setText(etInput.getText().toString());//将EditText的内容显示到第一个星星（TextView）上
             }
         });
         //第一步next动画,结束的时候添加bankCardView2(第二页)到rlContent,然后第二页执行向上的动画
