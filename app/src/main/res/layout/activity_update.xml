@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#88888888">
+
+    <ImageView
+        android:id="@+id/update_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:src="@mipmap/updata" />
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/update_dialog_layout_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="60dp"
+            android:text="V1.13版本新特性"
+            android:textColor="#393941"
+            android:textSize="16sp" />
+
+        <TextView
+           android:gravity="center_horizontal"
+            android:id="@+id/update_dialog_layout_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:text=" 1.修复细小bug\n 2.增加帮卡流程\n 3.增加手势密码"
+            android:textColor="#393941"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <com.example.liuyong.bezierview.updateAnim.UpdateProgressView
+        android:id="@+id/updateview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/update_bg" />
+</RelativeLayout>
