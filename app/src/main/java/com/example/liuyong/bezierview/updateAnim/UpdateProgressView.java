@@ -260,7 +260,7 @@ public class UpdateProgressView extends View {
      */
 
     private void toPrepare() {
-        final ValueAnimator va = ValueAnimator.ofFloat(0, width / 2 - pbPaint.getStrokeWidth() * 2 - pbProgerssDrawable.getWidth());
+        final ValueAnimator va = ValueAnimator.ofFloat(0, width / 2 - pbPaint.getStrokeWidth() * 3 - pbProgerssDrawable.getWidth());
         va.setInterpolator(new LinearInterpolator());
         va.setDuration(200);
         va.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {

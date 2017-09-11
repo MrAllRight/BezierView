@@ -10,3 +10,5 @@
 4.将LAUNCHER改为AddBankCardActivity,可看到添加银行卡动画效果，详情参考 http://www.jianshu.com/p/c206bd3c30fe
 
 5.将LAUNCHER改为UpdateActivity,可看到app更新动画效果，详情参考 http://www.jianshu.com/p/dda66d8061c1
+
+6.将LAUNCHER改为RefreshViewActivity,可看到仿支付宝支付动画，详情参考 http://www.jianshu.com/p/9af0ec389431
